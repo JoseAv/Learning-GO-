@@ -1,0 +1,5 @@
+package basico
+
+func showVar() {
+
+}
