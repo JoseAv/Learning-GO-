@@ -1,12 +1,12 @@
 package operation
 
-func addelement(newSlice *[]int, value int) string {
+func Addelement(newSlice *[]int, value int) string {
 
 	*newSlice = append(*newSlice, value)
 	return "Create"
 }
 
-func deletElement(newSlice *[]int, value int) string {
+func DeletElement(newSlice *[]int, value int) string {
 	forArray := []int{}
 	for _, num := range *newSlice {
 		if num != value {
@@ -17,7 +17,7 @@ func deletElement(newSlice *[]int, value int) string {
 	return "Delete complete"
 }
 
-func deletElementForm2(newSlice *[]int, value int) string {
+func DeletElementForm2(newSlice *[]int, value int) string {
 	forArray := []int{}
 	for index, num := range *newSlice {
 		if num == value {
@@ -30,4 +30,20 @@ func deletElementForm2(newSlice *[]int, value int) string {
 	}
 	*newSlice = forArray
 	return "Delete complete"
+}
+
+func InterseccionSlice(mySlice []int, otherSlice []int) []int {
+	compareMap := map[int]int{}
+	SliceInterseccion := []int{}
+	for _, v := range mySlice {
+		compareMap[v]++
+	}
+	for _, v := range otherSlice {
+		_, ok := compareMap[v]
+		if ok {
+			SliceInterseccion = append(SliceInterseccion, v)
+		}
+	}
+	return SliceInterseccion
+
 }
