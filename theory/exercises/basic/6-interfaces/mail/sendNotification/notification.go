@@ -3,9 +3,9 @@ package sendnotification
 import "fmt"
 
 type Notification interface {
-	email()
-	sms()
-	push()
+	email(m Message)
+	sms(m Message)
+	push(m Message)
 	Send()
 }
 
